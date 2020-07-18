@@ -48,6 +48,7 @@ a {
   height: 30px;
   outline: none;
   padding-left: 10px;
+  flex-wrap: nowrap;
 }
 
 .search_button {

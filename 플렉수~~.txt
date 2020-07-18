@@ -1,0 +1,46 @@
+height: 10vh  --> 부모영역에 상관없이 보이는 영역의 10%사용
+ (예를들어 container에 100%를 주면 부모영역인 body, html의 높이를 조정했어야 했는데 그럴 필요가 없음)
+
+container 속성값
+display  <<이거 꼭 써야함>>
+  :flex; --> 이거 쓰니 flex-direction:row; 상태로 됨
+flex-direction
+  :row;  --> 왼(1)-오 (default)
+  :row-reverse;  --> 오(1)-왼
+  :column;  --> 위(1)-아래
+  :column-reverse  --> 아래(1)-위
+flex-wrap
+  :nowrap; --> 줄바꿈X (default)
+  :wrap --> 화면에 넘치면 줄바꿈 
+  :wrap-reverse --> 아래부터 시작하여 위로줄바꿈
+flex-flow ==> direction + wrap (border속성 주는것 처럼 한줄에 가능)
+  ex) flex-flow { column nowrap; }
+justify-content  <<중심축에서 아이템들 배치>>
+  :start;  --> float:left;
+  :end;  --> float:right;
+  :center; --> margin:auto;
+  :space-around; --> 박스 사이에 간격(1, 10은 조금)
+  :space-evenly;  --> 박스 사이사이 같은간격  
+  :space-between;  --> 양쪽끝은 화면에 맞게 중간에만 간격
+align-items <<반대축에서 아이템들 배치>>
+  :center  --> 수직쪽으로 중심
+  :baseline --> text-align:middle개념? 박스 크키가 달라도 텍스트 가로정렬
+align-content ==> justify-content값을 다 쓸 수 있음. justify-content를 세로축기준으로 설정
+ 
+item 속성값
+order  --> 박스의 순서변경 order:숫자  ==> 써본적 없다네요ㅇㅅㅇ
+flex-grow  ==> 화면이 작아지면 같은 크키가 되네요~
+  :0;  --> 화면이 커져도 본인의 최대크기만 유지.. (default)
+  :1;  --> 화면이 커지면 박스도 같이 커짐
+  :2;  --> 1로 준 박스보다 2배로 커짐   ... 숫자 더 커져도 되네용^^
+flex-shrink  ==> 컨테이너가 점점 작아질때 어떻게 되느냐..
+  :0;  (default)
+  :2;  --> 2배로 작게 줄어들어~
+flex-basis  ==> 커질때도 작아질때도 %유지
+  :auto; (default)
+  :~%; 
+align-self  ==>아이템별로 아이템 정렬
+  :center;
+
+
+중심축(main axis) / 반대축(cross axis)
