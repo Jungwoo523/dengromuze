@@ -28,7 +28,7 @@ a {
   color: white;
 }
 /** 아이콘 */
-.fas {
+.fa-couch {
   color: lemonchiffon;
 }
 
@@ -84,7 +84,22 @@ a {
   background-color: orangered;
   border-radius: 5px;
 }
-
+/** 캐러셀 버튼 */
+.fa-chevron-circle-left {
+  color: black;
+}
+.fa-chevron-circle-right {
+  color: black;
+}
+.contents-img {
+  width: 500px;
+  display: flex;
+  position: absolute;
+  z-index: 0;
+}
+.showing {
+  z-index: 1;
+}
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
