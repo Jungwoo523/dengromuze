@@ -42,24 +42,26 @@
         </div>
         <div class="btn2"></div>
         <div class="wrap">
-          <div class="carousel-box">
-            <img class="contents-img" src="../imgs/tom-1.jpg" alte"1">
+          <div class="carousel_box">
+            <img class="contents_img" src="../imgs/tom-1.jpg" alte"1"> <img
+            class="contents_img" src="../imgs/tom-2.jpg" alte"1"> <img
+            class="contents_img" src="../imgs/beastie.jpg" alte"1">
           </div>
-          <div class="carousel-box">
-            <img class="contents-img" src="../imgs/tom-2.jpg" alte"1">
+          <!-- <div class="carousel_box">
+            <img class="contents_img" src="../imgs/tom-2.jpg" alte"1">
           </div>
-          <div class="carousel-box">
-            <img class="contents-img" src="../imgs/beastie.jpg" alte"1">
-          </div>
+          <div class="carousel_box">
+            <img class="contents_img" src="../imgs/beastie.jpg" alte"1">
+          </div> -->
         </div>
       </div>
     </section>
     <footer></footer>
     <script>
       const SHOWING_CLASS = "showing";
-      const firstSlide = document.querySelector(".contents-img:first-child");
+      const firstSlide = document.querySelector(".contents_img:first-child");
       function slide() {
-        const currentSlide = document.querySelector(".${SHOWING_CLASS}");
+        const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
         if (currentSlide) {
           currentSlide.classList.remove(SHOWING_CLASS);
           const nextSlide = currentSlide.nextElementSibling;
