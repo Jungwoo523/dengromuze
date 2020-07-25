@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/3417fd725b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
   </head>
   <body>
     <header class="navbar">
@@ -35,36 +36,65 @@
       </ul>
     </header>
     <section>
-      <div class="carousel">
-        <div class="btn1">
-          <a href=""><i class="fas fa-chevron-circle-left"></i></a>
-          <a href=""><i class="fas fa-chevron-circle-right"></i></a>
-        </div>
-        <div class="btn2"></div>
-        <div class="wrap">
-          <div class="carousel_box">
+      <article>
+        <div class="carousel">
+          <div>
             <img class="contents_img" src="../imgs/tom-1.jpg" alte"1"> <img
             class="contents_img" src="../imgs/tom-2.jpg" alte"1"> <img
             class="contents_img" src="../imgs/beastie.jpg" alte"1">
           </div>
-          <!-- <div class="carousel_box">
-            <img class="contents_img" src="../imgs/tom-2.jpg" alte"1">
+          <div class="controls">
+            <button id="prev_btn" class="cbtn">
+              <i class="fas fa-chevron-circle-left"></i>
+            </button>
+            <button id="next_btn" class="cbtn">
+              <i class="fas fa-chevron-circle-right"></i>
+            </button>
           </div>
-          <div class="carousel_box">
-            <img class="contents_img" src="../imgs/beastie.jpg" alte"1">
-          </div> -->
+        </div>
+        <aside class="bannerimg">
+          <img src="../imgs/비스티 포스터.jpg" alt="1" class="banner_img" />
+          <img src="../imgs/로빈포스터.jpg" alt=1" class="banner_img">
+          <img src="../imgs/mhe.jpg" alt="1" class="banner_img" />
+        </aside>
+      </article>
+
+      <div class="theater">
+        <div class="theaterimg">
+          <img src="../imgs/티오엠-외관.jpg" alt="1" class="theater_img" />
+          <br /><b>대학로 TOM</b><br />
+          <p>진행중인 공연: <span>뮤지컬 루드윅 베토벤 더 피아노</span></p>
+          <p>출연진: <span>테이 박유덕 김소향 등 출연</span></p>
+          <p>공연예정 공연 : <span>미정</span></p>
+        </div>
+        <div class="theaterimg">
+          <img src="../imgs/티오엠-외관.jpg" alt="1" class="theater_img" />
+          <br /><b>대학로 TOM</b><br />
+          <p>진행중인 공연: <span>뮤지컬 루드윅 베토벤 더 피아노</span></p>
+          <p>출연진: <span>테이 박유덕 김소향 등 출연</span></p>
+          <p>공연예정 공연 : <span>미정</span></p>
+        </div>
+        <div class="theaterimg">
+          <img src="../imgs/티오엠-외관.jpg" alt="1" class="theater_img" />
+          <br /><b>대학로 TOM</b><br />
+          <p>진행중인 공연: <span>뮤지컬 루드윅 베토벤 더 피아노</span></p>
+          <p>출연진: <span>테이 박유덕 김소향 등 출연</span></p>
+          <p>공연예정 공연 : <span>미정</span></p>
         </div>
       </div>
     </section>
+
     <footer></footer>
-    <script>
+    <script type="text/javascript">
       const SHOWING_CLASS = "showing";
       const firstSlide = document.querySelector(".contents_img:first-child");
+      const lasttSlide = document.querySelector(".contents_img:last-child");
       function slide() {
         const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
         if (currentSlide) {
           currentSlide.classList.remove(SHOWING_CLASS);
           const nextSlide = currentSlide.nextElementSibling;
+          const prevSlide = currentSlide.previousElementSibling;
           if (nextSlide) {
             nextSlide.classList.add(SHOWING_CLASS);
           } else {
@@ -75,7 +105,56 @@
         }
       }
       slide();
-      setInterval(slide, 2000);
+      setInterval(slide, 3000);
+
+      function left_move() {
+        const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+        if (currentSlide) {
+          currentSlide.classList.remove(SHOWING_CLASS);
+          const prevSlide = currentSlide.previousElementSibling;
+          if (prevSlide) {
+            prevSlide.classList.add(SHOWING_CLASS);
+          } else {
+            lasttSlide.classList.add(SHOWING_CLASS);
+          }
+        }
+      }
+      $(function () {
+        $("#prev_btn").click(function () {
+          left_move();
+        });
+      });
+
+      function right_move() {
+        const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
+        if (currentSlide) {
+          currentSlide.classList.remove(SHOWING_CLASS);
+          const nextSlide = currentSlide.nextElementSibling;
+          if (nextSlide) {
+            nextSlide.classList.add(SHOWING_CLASS);
+          } else {
+            firstSlide.classList.add(SHOWING_CLASS);
+          }
+        }
+      }
+      $(function () {
+        $("#next_btn").click(function () {
+          right_move();
+        });
+      });
+      /**------------------------- */
+      $(function () {
+        $(".theaterimg").mouseover(function () {
+          let hoverimg = $(this).children("img");
+          $(hoverimg).addClass("theaterhover");
+          $(hoverimg).removeClass("theater_img");
+        });
+        $(".theaterimg").mouseleave(function () {
+          let leaveimg = $(".theaterhover");
+          $(leaveimg).addClass("theater_img");
+          $(leaveimg).removeClass("theaterhover");
+        });
+      });
     </script>
   </body>
 </html>

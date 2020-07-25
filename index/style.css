@@ -1,3 +1,20 @@
+html,
+body,
+article {
+  height: 100%;
+}
+section {
+  height: 70%;
+}
+aside,
+article {
+  display: flex;
+}
+aside {
+  width: 10%;
+  flex-direction: column;
+}
+
 .navbar {
   display: flex;
   border: 1px solid #263343;
@@ -84,27 +101,99 @@ a {
   background-color: orangered;
   border-radius: 5px;
 }
-/** 캐러셀 버튼 */
-.fa-chevron-circle-left {
-  color: black;
-}
-.fa-chevron-circle-right {
-  color: black;
-}
+
 .contents_img {
-  width: 500px;
   display: flex;
   position: absolute;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 .showing {
   z-index: 1;
 }
+
+.controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  z-index: 5;
+}
+.cbtn {
+  color: white;
+  z-index: 5;
+  background: none;
+  border: none;
+}
+
+.carousel {
+  margin: 0;
+  width: 90%;
+  position: relative;
+  display: flex;
+}
+
+.banner_img {
+  height: 30%;
+  width: auto;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.theater {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+.theaterimg {
+  padding: 20px;
+  margin: 10px;
+  font-size: 13px;
+  position: relative;
+  border: 1px solid lightslategray;
+}
+
+.theater p {
+  margin: 0;
+}
+.theater b {
+  display: inline-block;
+  padding: 15px 0;
+}
+.theater_img {
+  width: 100%;
+  max-height: 200px;
+}
+.theaterhover {
+  width: 100%;
+  max-height: 200px;
+  transform: scale(1.1);
+  overflow: hidden;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.bannerimg {
+  display: flex;
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
     padding: 0px;
   }
+
   .navbar_logo {
     margin: 10px 0px;
   }
