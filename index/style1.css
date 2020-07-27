@@ -1,34 +1,18 @@
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-}
-.container {
-  display: flex;
-  margin-top: 5px;
+html,
+body,
+article {
   height: 100%;
 }
 section {
-  width: 88%;
-  height: 100%;
-  order: 1;
+  height: 70%;
+}
+aside,
+article {
+  display: flex;
 }
 aside {
-  width: 12%;
-  height: 615px;
-  align-content: end;
-  order: 2;
-  margin-left: 5px;
-}
-.bannerimg {
-  display: flex;
+  width: 10%;
   flex-direction: column;
-  order: 2;
-}
-.banner_img {
-  height: 200px;
-  padding-bottom: 5px;
 }
 
 .navbar {
@@ -117,13 +101,7 @@ a {
   background-color: orangered;
   border-radius: 5px;
 }
-.carousel {
-  margin: 0;
-  width: 100%;
-  min-height: 500px;
-  position: relative;
-  display: flex;
-}
+
 .contents_img {
   display: flex;
   position: absolute;
@@ -153,11 +131,24 @@ a {
   border: none;
 }
 
+.carousel {
+  margin: 0;
+  width: 90%;
+  position: relative;
+  display: flex;
+}
+
+.banner_img {
+  height: 30%;
+  width: auto;
+  padding-left: 10px;
+  padding-top: 5px;
+}
 .theater {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -166,9 +157,9 @@ a {
   transition: all 0.5s ease-in-out;
 }
 .theaterimg {
-  width: 23%;
-  padding: 20px 30px;
-  margin: 10px 2px;
+  width: 25%;
+  padding: 20px;
+  margin: 10px;
   font-size: 13px;
   position: relative;
   border: 1px solid lightslategray;
@@ -195,15 +186,11 @@ a {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+.bannerimg {
+  display: flex;
+}
 
 @media screen and (max-width: 768px) {
-  section {
-    width: 100%;
-  }
-  .carousel {
-    min-height: 400px;
-  }
-
   .navbar {
     flex-direction: column;
     padding: 0px;
@@ -249,10 +236,6 @@ a {
     margin: 10px;
     font-size: 13px;
     border: 1px solid lightslategray;
-    flex-grow: 1;
-  }
-  .carousel {
-    min-height: 400px;
   }
   .banner_img {
     display: none;
