@@ -19,22 +19,33 @@
           <span class="daeng">DAENGLODUCKHU</span>
         </a>
       </div>
-      <div class="search_bar">
-        <input
-          type="search"
-          id="search_bar"
-          class="search_input"
-          placeholder="공연장을 검색하세요."
-        />
-        <button type="button" class="search_button">
-          <i class="fas fa-search"></i>
-        </button>
+      <div class="mobilemenu">
+        <a href="#" class="menutab"><i class="fas fa-bars"></i></a>
+
+        <div class="search_bar">
+          <input
+            type="search"
+            id="search_bar"
+            class="search_input"
+            placeholder="공연장을 검색하세요."
+          />
+          <button type="button" class="search_button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
       </div>
       <ul class="navbar_menu">
         <li><a href="">Login</a></li>
         <li><a href="">Join</a></li>
       </ul>
     </header>
+    <navbar>
+      <div class="menubar">
+        <a href="#" class="menu">공연장정보</a>
+        <a href="#" class="menu">공연정보</a>
+        <a href="#" class="menu">맛집정보</a>
+      </div>
+    </navbar>
     <div class="container">
       <section>
         <article class="carousel">
@@ -108,7 +119,14 @@
         </div>
       </aside>
     </div>
-    <footer></footer>
+    <footer>
+      <div class="copyright">
+        <a href="#" class="copy">개인정보처리방침</a>
+        <a href="#" class="copy">이용약관</a>
+        <a href="#" class="copy">회사소개</a>
+        <a href="#" class="copy">제휴/광고 안내</a>
+      </div>
+    </footer>
     <script type="text/javascript">
       const SHOWING_CLASS = "showing";
       const firstSlide = document.querySelector(".contents_img:first-child");
